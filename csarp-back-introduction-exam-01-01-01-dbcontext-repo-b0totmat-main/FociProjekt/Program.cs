@@ -46,6 +46,10 @@ Console.WriteLine($"Összes focista: {focistakSzama}. fő");
 focistakRepo.Modosit(new Focista("Sergio Ramos", 9, 184, 82, true, realMadrid));
 
 // Sikerült-e módosítani a focista adatait?
+// 1.
+int ujMezszam = focistakRepo.KeresFocista("Sergio Ramos").Mezszam;
+Console.WriteLine($"Sergio Ramos új mezszáma: {ujMezszam}");
+// 2.
 Focista? ujRamos = focistakRepo.KivalasztOsszesFocistat().Find(focista => focista.Nev == "Sergio Ramos");
 if (ujRamos is not null)
     Console.WriteLine($"{ujRamos.Nev} új mezszama {ujRamos.Mezszam}.");

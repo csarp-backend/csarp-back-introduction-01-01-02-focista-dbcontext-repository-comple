@@ -21,6 +21,11 @@ namespace FociProjekt.Repos
             _appDbContext.Focistak.Add(entity);   
         }
 
+        public Focista KeresFocista(string nev)
+        {
+            return _appDbContext.Focistak.Find(f => f.Nev == nev) ?? new Focista();
+        }
+
         public List<Focista> KivalasztOsszesFocistat() 
         {
             return _appDbContext.Focistak;
